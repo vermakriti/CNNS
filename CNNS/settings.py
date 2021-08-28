@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    
+
     'categories.apps.CategoriesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -78,12 +78,12 @@ WSGI_APPLICATION = 'CNNS.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME':'ni_db',
-        'USER':'postgres',
-        'PASSWORD':'1234',
+        'USER':'nutritionIndia',
+        'PASSWORD':'nutritionIndia',
         'HOST':'localhost',
-        'PORT':'5432'
+        'PORT':'80'
     }
 }
 
