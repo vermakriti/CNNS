@@ -70,9 +70,11 @@ def stateAndDistrict (request):
     states=AreaEn.objects.values('area_id','area_name','area_id').filter(area_parent_id=1).order_by('area_name')
 
     for i in range(len(states)):
-        states[i]['area_id'] = '/static_files/stateAndDistrict/NutritionInfo_' + states[i]['area_id']+ '_' + states[i]['area_name'] + '.pdf'
+        #states[i]['area_id'] = '/static_files/stateAndDistrict/NutritionInfo_' + states[i]['area_id']+ '_' + states[i]['area_name'] + '.pdf'
+        states[i]['area_id']=""
     for i in range(len(india)):
-        india[i]['area_id']= '/static_files/stateAndDistrict/NutritionInfo_' + india[i]['area_id']+ '_' + india[i]['area_name'] + '.pdf'
+        #india[i]['area_id']= '/static_files/stateAndDistrict/NutritionInfo_' + india[i]['area_id']+ '_' + india[i]['area_name'] + '.pdf'
+        india[i]['area_id']=""
 
     if request.method == 'POST':
 

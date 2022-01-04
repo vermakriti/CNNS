@@ -104,8 +104,14 @@
                         <ul class="press" id="sideMenu">
                             {% for item in menu.menu_items.all %}
                                 <li>
-                                    {% if item.title == "CNNS Factsheets" %}
+                                    {% if item.title == "CNNS FACTSHEETS" %}
                                         <a href="{% url 'factsheets' %}" >CNNS FACTSHEETS</a>
+                                    {% elif item.title == "CNNS PRESENTATIONS" %}
+                                        <a href="{% url 'presentations' %}">CNNS PRESENTATIONS</a>    
+                                    {% elif item.title == "STATE AND DISTRICT NUTRITION FACTSHEETS" %} 
+                                        <a href="{% url 'stateAndDistrict' %}">STATE AND DISTRICT NUTRITION FACTSHEETS</a> 
+                                    {% elif item.title == "NFHS-5 FACT SHEETS (CSV format)" %} 
+                                        <a href="{% url 'nfhsfactsheets' %}">NFHS-5 FACT SHEETS (CSV format)</a>
                                     {% else %}    
                                         <a href="{{ item.link }}" {% if item.open_in_new_tab %} target="_blank"{% endif %}>{{ item.title }}</a>
                                     {% endif %}    
@@ -113,10 +119,10 @@
                             {% endfor %}
                         </ul>
                     </div>   
+                    <div class="col-md-8  m-2 right">
+                        {% block content %}{% endblock %}
+                    </div>  
                 </div>
-                <div class="col-md-8  m-2 right">
-                    {% block content %}{% endblock %}
-                </div>         
             </div>
             <footer class="footer p-0 mt-4">
                 <div class="row  p-0 m-0 align-items-center">
