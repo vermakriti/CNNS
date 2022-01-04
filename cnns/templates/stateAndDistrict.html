@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+        <div id="page" class="container">
+	        <div id="main">
+		        <div id="featured">
+			        <div class="title">
+                  <h2>State And District Nutrition Factsheets </h2>
+                  <span class="byline">(To download District factsheet, select State, press VIEW and click District)</span>
+              </div>
+              <form action="stateAndDistrict" method="post" name="formid" onsubmit="return true">
+                <div style="border: 1px solid black; border-radius: 10px; padding: 10px;">
+                  {% csrf_token %}
+                  <select name="selected_state" id="state" style="width: 250px; background-color: white; border: 1px solid black; border-radius: 5px; height: 40px;"  alt="India State wise NFHS-5 Reports">
+
+                    <option disabled="true" > --select country/state--</option>
+
+                    {% if "India" ==  selected_state_value %}
+                    <option value="India" selected> India</option>
+                    {% else %}
+                    <option value="India"> India</option>
+                    {%endif%}
+                    
+                    {% for s in states %}
+                    {% if s.area_name ==  selected_state_value %}
+                    <option value="{{s.area_name}}" selected> {{s.area_name}}</option>
+                    {% else %}
+                    <option value="{{s.area_name}}"> {{s.area_name}}</option>
+                    {%endif%}
+                    {% endfor %}
+                  </select>
+                  <button type="submit" name="submit" style="width: 100px; background-color: rgba(255, 162, 70, 1); color: white;"><i class="fa fa-search"></i>  View</button> 
+                </div>
+              </form>  
+              {% if selected_state_value == "India"%}
+                <ul class="style1 stateAndDistrict" > 
+                  {% for i in india %}
+                    <li>
+                      <a href="{{i.area_id}}" target="_blank"  alt="India State wise NFHS-5 Reports">{{ i.area_name}}</a> 
+                    </li>
+                  {% endfor %}
+                  {% for s in states %}
+                    <li>
+                      <a href="{{s.area_id}}" target="_blank"  alt="India State wise NFHS-5 Reports">{{ s.area_name}}</a>
+                    </li>
+                  {% endfor %}  
+                </ul>
+              {% else %}
+                <ul class="style1 stateAndDistrict" > 
+                  {% for d in district %}
+                    <li>
+                      <a href="{{d.area_id}}" target="_blank"  alt="India State wise NFHS-5 Reports">{{ d.area_name}}</a> 
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif%}  
+		        </div>
+	        </div>
+        </div>     
+{% endblock %}

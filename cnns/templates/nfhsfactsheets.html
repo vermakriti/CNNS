@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+        <div id="page" class="container">
+	        <div id="main">
+		        <div id="featured">
+			        <div class="title">
+				        <h2>NFHS-5 FACT SHEETS</h2>
+				        <span class="byline">(Click on the State to download district level data in CSV format)</span>
+			        </div>
+			        <ul class="style1 factsheet"> 
+						<a href="{%static 'nfhs5_factsheet'%}/NFHS-5_IND.csv" target="_blank">India</a>
+						
+						{% for key,value in states.items %}
+				        <li >
+                           <a href="{%static 'nfhs5_factsheet'%}/NFHS-5_{{key}}.csv" target="_blank">{{ value}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+		        </div>
+	        </div>
+        </div>
+
+{% endblock %}

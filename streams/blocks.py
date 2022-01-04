@@ -17,3 +17,4 @@ class RichtextBlock(blocks.RichTextBlock):
         template = "streams/richtext_block.html"
         icon = "doc-full"
         label = "Full RichText"        
+

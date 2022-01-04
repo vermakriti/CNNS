@@ -1,13 +1,13 @@
 {% load static wagtailcore_tags wagtailuserbar menus_tags %}
 {% load static %}
 
-{% get_menu "main" as navigation %}
+{% get_menu "navigation" as menu %}
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>
+        <!-- <title>
             {% block title %}
                 {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
             {% endblock %}
@@ -15,32 +15,124 @@
                 {% wagtail_site as current_site %}
                 {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
             {% endblock %}
-        </title>
+        </title> -->
+        <title>NutritionINDIA - Lifecycles, India's Statwise  NFHS Reports </title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="NFHS Reports,NFHS5, Statwise, Graphical representation" />
+		<meta name="description" content="Nutrition INDIA Lifecycles, NFHS5 Reports, Adolescence,Women of Reproductive Age, Pregnancy, Delivery/PNC, Early Childhood, School Age"/>
+		<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/examples/navbars/navbar.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css">
+		<link rel="stylesheet" type="text/css" href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+		<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">  
+		<link rel="stylesheet" href="{%static 'css/default.css' %}">
+		<link rel="stylesheet" href="{%static 'css/responsive.css' %}">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         {# Global stylesheets #}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{% static 'css/cnns.css' %}">
-
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}
+        <style>
+			.poshan-abhiyan{
+                float: right;
+                height:auto;
+			}
+			.nutrition-india{
+				width: 40%;
+				height: 100%;
+			}
+            body{
+                overflow: auto;
+            }
+            .nutrition-image {
+                height: auto;
+                width:40%;
+            }
+            .iitb-image {
+                height: auto;
+                width: 25%;
+                margin: auto;
+            }
+            .unichef-image {
+                height: auto;
+                width:25%;
+                float: right;
+            }
+        </style>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9QSQ9LZ2S"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-P9QSQ9LZ2S');
+        </script>
     </head>
 
+    <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+	  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                {% for item in navigation.menu_items.all %}
-                   <li class="nav-item">
-                    <a href="{{ item.link }}" class="nav-link" {% if item.open_in_new_tab %} target="_blank"{% endif %}>{{ item.title }}</a>
-                   </li> 
-                {% endfor %}
-            </ul>
-        </div>
-        {% block content %}{% endblock %}
+        <section id='main_app_container' class='flex flex-col'>
+            <div class="col-12" id="content-wrap">
+                <header>
+                    <div  id="brand_container" class="grid grid-cols-3 p-1">
+                        <div class="my-3"><a href="https://www.mohfw.gov.in/" target="_blank"><img src="{%static 'images/mhf.png' %}" class="health-ministry"/></a></div>
+                        <div class="mt-4"><a href="/" target=""><img src="{% static 'images/nutrition-logo.svg' %}" class="nutrition-india mx-auto"/></a></div>
+                        <div><a href="http://poshanabhiyaan.gov.in/#/" target="_blank"> <img src="{%static 'images/pa.png' %}" class="poshan-abhiyan"/></a></div> 
+                    </div>
+                </header>
+                <div class="Topheader">
+                    <a href="/"><i class="material-icons" style="font-size:35px;color:white;text-shadow:2px 2px 4px #000000;">home</i></a>
+                </div> 
+                <div class="row">
+                    <div class="col-md-3 mt-5 sidenav  xl:px-20" id="mySidenav">
+                        <button type="button" class="btn btn-xs" id="mobileButton" style="margin: auto; background-color: #28a745; margin-bottom: 20px;" onclick="toggleNavBar()">
+                            <i class="material-icons" style="color:white;">menu_open</i>
+                        </button>
+                        <ul class="press" id="sideMenu">
+                            {% for item in menu.menu_items.all %}
+                                <li>
+                                    {% if item.title == "CNNS Factsheets" %}
+                                        <a href="{% url 'factsheets' %}" >CNNS FACTSHEETS</a>
+                                    {% else %}    
+                                        <a href="{{ item.link }}" {% if item.open_in_new_tab %} target="_blank"{% endif %}>{{ item.title }}</a>
+                                    {% endif %}    
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>   
+                </div>
+                <div class="col-md-8  m-2 right">
+                    {% block content %}{% endblock %}
+                </div>         
+            </div>
+            <footer class="footer p-0 mt-4">
+                <div class="row  p-0 m-0 align-items-center">
+                    <div class="col-4">
+                        <a href="https://nutritionindia.info/" target="_blank"><img src="{% static 'images/nutrition-logo-footer.svg' %}" class="nutrition-image"/></a>
+                    </div>
+                    <div class="col-4">
+                        <a href="https://www.ctara.iitb.ac.in/" target="_blank"><img src="{% static 'images/ctara-logo.png' %}" title="CTARA" class="iitb-image"/></a>
+                    </div>
+                
+                    <div class="col-4">
+                        <a href="http://unicef.in/" target="_blank"><img src="{% static 'images/unicefLogo.png' %}"  class="unichef-image"/></a>
+                    </div>
+                </div> 
+            </footer>
+        </section>
 
         {# Global javascript #}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -49,6 +141,15 @@
             {# Override this in templates to add extra javascript #}
         {% endblock %}
 
-        
+        <script>
+            const toggleNavBar = () => {
+            var x = document.getElementById("sideMenu");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        </script>
     </body>
 </html>
