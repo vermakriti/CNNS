@@ -10,6 +10,7 @@ class FlexPage(Page):
 
     template = "flex/flex_page.html"
     subtitle = models.CharField(max_length=100, null=True, blank=True)
+    content_subSubtitle =  models.CharField(max_length=500,blank=True,null=True)
     content = StreamField(
         [
             ("title_and_text", blocks.TitleAndTextBlock()),
@@ -20,6 +21,7 @@ class FlexPage(Page):
     )
     content_panels = Page.content_panels + [
         FieldPanel("subtitle"),
+        FieldPanel("content_subSubtitle"),
         StreamFieldPanel("content"),
     ]
 

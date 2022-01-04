@@ -5,6 +5,7 @@ class TitleAndTextBlock(blocks.StructBlock):
    
     # title = blocks.CharBlock(required=True, help_text="Add your title")
     text = blocks.TextBlock(required=True, help_text="Add additional text")
+    subtitle =  blocks.CharBlock(required=True, help_text="Add your subtitle")
 
     class Meta:  
         template = "streams/title_and_text_block.html"
@@ -17,4 +18,3 @@ class RichtextBlock(blocks.RichTextBlock):
         template = "streams/richtext_block.html"
         icon = "doc-full"
         label = "Full RichText"        
-
