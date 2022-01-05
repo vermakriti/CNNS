@@ -94,19 +94,21 @@
                         </button>
                         <ul class="press" id="sideMenu">
                             {% for item in menu.menu_items.all %}
-                                <li>
-                                    {% if item.title == "CNNS FACTSHEETS" %}
-                                        <a href="{% url 'factsheets' %}" >CNNS FACTSHEETS</a>
-                                    {% elif item.title == "CNNS PRESENTATIONS" %}
-                                        <a href="{% url 'presentations' %}">CNNS PRESENTATIONS</a>    
-                                    {% elif item.title == "STATE AND DISTRICT NUTRITION FACTSHEETS" %} 
-                                        <a href="{% url 'stateAndDistrict' %}">STATE AND DISTRICT NUTRITION FACTSHEETS</a> 
-                                    {% elif item.title == "NFHS-5 FACT SHEETS (CSV format)" %} 
-                                        <a href="{% url 'nfhsfactsheets' %}">NFHS-5 FACT SHEETS (CSV format)</a>
-                                    {% else %}    
-                                        <a href="{{ item.link }}" {% if item.open_in_new_tab %} target="_blank"{% endif %}>{{ item.title }}</a>
-                                    {% endif %}    
-                                </li>
+                                {% if item.title == "CATEGORIES" %}
+                                    <li style="font-weight: bold;"><a href="">{{item.title}}</a></li>
+                                {% elif item.title == "CNNS" or item.title == "NFHS" or item.title == "NutritionINDIA.info" %}
+                                    <li style="background-color: rgb(69,69,69);" ><a>{{item.title}}</a></li>
+                                {% elif item.title == "CNNS FACTSHEETS" %}
+                                    <li><a href="{% url 'factsheets' %}" >CNNS FACTSHEETS</a></li>
+                                {% elif item.title == "CNNS PRESENTATIONS" %}
+                                    <li><a href="{% url 'presentations' %}">CNNS PRESENTATIONS</a></li>   
+                                {% elif item.title == "STATE AND DISTRICT NUTRITION FACTSHEETS" %} 
+                                    <li><a href="{% url 'stateAndDistrict' %}">STATE AND DISTRICT NUTRITION FACTSHEETS</a></li>
+                                {% elif item.title == "NFHS-5 FACT SHEETS (CSV format)" %} 
+                                    <li><a href="{% url 'nfhsfactsheets' %}">NFHS-5 FACT SHEETS (CSV format)</a></li>
+                                {% else %}    
+                                    <li> <a href="{{ item.link }}" {% if item.open_in_new_tab %} target="_blank"{% endif %}>{{ item.title }}</a></li>
+                                {% endif %}    
                             {% endfor %}
                         </ul>
                     </div>   

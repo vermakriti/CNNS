@@ -6,8 +6,8 @@
     <div id="main">
       <div id="featured">
         <div class="title">
-          <h2> {{self.subtitle}}</h2>
-          <span class="byline"> {{self.content_subSubtitle}}</span>
+          <h2> {{self.content_title}}</h2>
+          <span class="byline"> {{self.content_subtitle}}</span>
         </div>
         {% for block in page.content %}
           <div class="style1">{% include_block block %}</div>
