@@ -31,10 +31,10 @@ if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns()
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-    import debug_toolbar
-    urlpatterns = [
-        path('__debug__/', include('debug_toolbar.urls')),
-    ] + urlpatterns 
+    # import debug_toolbar
+    # urlpatterns = [
+    #     path('__debug__/', include('debug_toolbar.urls')),
+    # ] + urlpatterns 
 
 urlpatterns = urlpatterns + [
     # For anything not caught by a more specific rule above, hand over to
