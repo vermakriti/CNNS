@@ -1,6 +1,6 @@
 from django.http import response
 from django.shortcuts import render,redirect
-from cnns.models import AreaEn
+from ni_reports.models import AreaEn
 from django.utils.datastructures import MultiValueDictKeyError
 from django.db.models import Q
 

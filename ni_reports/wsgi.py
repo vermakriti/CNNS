@@ -1,5 +1,5 @@
 """
-WSGI config for cnns project.
+WSGI config for ni_reports project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cnns.settings.dev")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ni_reports.settings.dev")
 
 application = get_wsgi_application()
