@@ -7,10 +7,12 @@
       <div id="featured">
         <div class="title">
           <h2> {{self.content_title}}</h2>
-          <span class="byline"> {{self.content_subtitle}}</span>
+            {% if self.content_subtitle%}
+              <span class="byline"> {{self.content_subtitle}}</span>
+            {% endif%}  
         </div>
         {% for block in page.content %}
-          <div class="style1">{% include_block block %}</div>
+          <ul class="style1">{% include_block block %}</ul>
         {% endfor %}
       </div>
     </div>

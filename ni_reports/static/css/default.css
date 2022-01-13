@@ -1,6 +1,7 @@
 .Topheader{
 	top: 0%;
 	background-color: green;
+	/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 /* fixed box shodow */
 .column{
@@ -11,9 +12,16 @@
 .right{
 	
 	padding: 0px 10px;
+	/* margin-top: 25px;
+  	margin-left: 20%; */
+	/* left:25%; */
 	position: relative;
+    /* width: 70%; */
     height: auto;
+	/* margin-right: 2%; */
+	/* box-shadow: 0 3px 12px 0 #2980b9; */
 	border: 1px solid green;
+	/* border-radius: 25px; */
 	overflow: auto;
    
 }
@@ -40,6 +48,7 @@
     position: relative;
     width: 360px;
 	margin: auto;
+    /* padding: 1em 0em; */
 }
 
 #menu ul
@@ -61,8 +70,10 @@
 	font-size: 13px;
 	text-decoration:  none;
 	text-transform: uppercase;
+	/* font-weight: 700; */
 	color: white;
 	width: 50%;
+	/* text-shadow: 2px 2px 4px #888888; */
 }
 
 #menu li:hover{
@@ -76,6 +87,7 @@
 	font-size: 1.7em;
 	color:  rgba(255, 162, 70, 1);
 	font-weight: 700;
+	/* text-shadow: 2px 2px 4px #888888 */
 }
 
 .title .byline
@@ -104,18 +116,12 @@ ul.style1
 #featured{
 	margin-left: 2%;
 }
-ul.style1 li
-{
-	padding: .5em 0em 0em 0em;
-	margin: 0 0 1.5em 0;
-	/* border-top: 1px solid rgba(0,0,0,.1); */
-}
 
 ul.style1 p
 {
-    margin: 0;
-    
+	margin-bottom: 2em;
 }
+
 
 ul.style1 a
 {
@@ -275,4 +281,3 @@ div.content {
 /* #mySidenav {
 	margin-left: 10%;
 } */
-
